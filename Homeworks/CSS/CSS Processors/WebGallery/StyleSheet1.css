@@ -1,0 +1,44 @@
+﻿body,
+div,
+input,
+img,
+label {
+  margin: 0;
+  padding: 0;
+}
+body #piclabels {
+  margin: 10px 20px;
+}
+body #piclabels .radio {
+  width: 150px;
+  height: 150px;
+  margin: 10px 5px;
+  display: inline-block;
+}
+body #piclabels .radio img {
+  width: 150px;
+  height: 150px;
+}
+body #first {
+  margin: 10px 20px;
+  position: relative;
+}
+body #first .radio {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  margin: -2px;
+}
+body #first .radio img {
+  width: 250px;
+  height: 250px;
+}
+body #first input[type=radio] {
+  display: none;
+}
+body #first input[type=radio]:checked + .radio {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 2px;
+}

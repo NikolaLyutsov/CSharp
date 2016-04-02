@@ -1,0 +1,82 @@
+﻿body
+{
+	font-family: calibri;
+	font-size: 18px;
+	line-height: 18px;
+	width: 647px
+}
+
+nav	{
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: 900;
+	margin: 0 10px 10px 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+}
+
+legend
+{
+	text-align: center;
+}
+
+.withFrame
+{
+	border: 1px solid black;
+	padding: 5px;
+	padding-bottom: 15px
+}
+#minPrice, #maxPrice, #minRam, #maxRam
+{
+	width: 30px;
+	border: 0px;
+	text-align: right;
+}
+
+fieldset, .floatLeft {
+	float: left;
+}
+
+fieldset {
+	width: 220px;
+}
+
+form>div>:nth-child(2n+1) {
+	clear: both;
+}
+
+input[type="range"] {
+	display: block;
+}
+
+fieldset {
+	padding: 2px;
+}
+
+.floatLeft>p {
+	text-align: center;
+	margin: 10px 0 0 0;	
+}
+
+fieldset>p {
+	margin: 24px 0 0 0;
+	margin-bottom: 5px;
+}
+
+img	{
+	height: 70px;
+	padding-bottom: 25px;
+}
+
+#sliders {
+	padding: 50px 20px 0 5px;
+}
+
+#sliders>p {
+	padding: 15px 0;
+}
+
+#sliders>input {
+	padding: 5px 0;
+	text-align: center;
+}

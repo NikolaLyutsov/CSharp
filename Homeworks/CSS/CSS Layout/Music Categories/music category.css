@@ -1,0 +1,63 @@
+﻿div, h2, article, button, p {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+h2 {
+	font-family: Arial Narrow, Arial, sans-serif;
+	font-size: 1.5em;
+}
+
+div	{
+	width: 390px;
+	padding: 10px;
+ 	background: #eeeeee;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+button.listen, button.add {
+	background-image: url(images/button.png);
+	height: 24px;
+	color: white;
+}
+
+button.listen {
+	width: 76px;
+}
+
+button.add {
+	width: 65px;
+	margin-left: 5px;
+}
+
+button:hover {
+	background-image: url(buttonHover.png);
+}
+
+img {
+	width: 135px;
+	height: 86px;
+	border: 1px solid #9a9997;
+	float: left;
+	margin-right: 15px;
+}
+
+button {
+	float: right;
+}
+
+article {
+	margin: 35px 0 10px 0;
+	position: relative;
+	border: 1px solid #9a9997;
+	background: white;
+	padding: 15px;
+    overflow:hidden ;
+}

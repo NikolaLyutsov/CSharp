@@ -1,0 +1,50 @@
+﻿body, div,input,img,label{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+    #piclabels{
+        margin: 10px 20px;
+        .radio{
+            width: 150px;
+            height: 150px;
+            margin: 10px 5px;
+            display: inline-block;
+
+            & img {
+            width: 150px;
+            height: 150px;
+            }
+        }
+    }
+   
+    #first{
+
+        margin: 10px 20px;
+        position: relative;
+        .radio{
+            width: 0;
+            height: 0;
+            display: inline-block;
+            margin: -2px;
+
+            & img {
+            width: 250px;
+            height: 250px;
+            }
+        }
+
+        input[type=radio] {
+            display: none;
+        
+            &:checked + .radio{
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 2px;
+            }
+        }
+    }
+}

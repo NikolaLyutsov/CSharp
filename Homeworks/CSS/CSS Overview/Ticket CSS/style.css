@@ -1,0 +1,36 @@
+﻿table {
+    margin: 130px;
+    padding: 45px;
+    background-color: #5f5f5f;
+    font-family:Arial;
+    color:#b4ac9d
+}
+table th {
+    font-weight: normal;
+    font-size:20px;
+    text-align:left
+}
+table td {
+    padding: 9px
+}
+table tr td:first-child {
+    color: #ffffff;
+    font-style:italic;
+        padding-right: 20px
+}
+a {
+    color:#dccf88;
+    text-decoration:none
+}
+  #userStatus {
+   font-size:25px;
+   color:#76b77f ;
+  }
+  #inactiveSupport {
+      color:red;
+      font-weight:600
+  }
+  #answerStatus {
+      font-weight:600;
+      color:chocolate
+  }

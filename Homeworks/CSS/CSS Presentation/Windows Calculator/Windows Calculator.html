@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Windows Calculator</title>
+    <link href="StyleSheet2.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <section>
+        <span id="calculator-pic">
+            <img src="calculator-img.png"/>
+        </span>
+        <span id="title">Calculator</span>
+        <span id="upper-buttons">
+            <img src="upper-buttons.png" alt="" />
+        </span>
+        <div class="main">
+            <ul>
+                <li>View</li>
+                <li>Edit</li>
+                <li>Help</li>
+            </ul>
+            <hr>
+            <div id="display">
+                <p id="digits">8854455</p>
+            </div>
+            <div id="binary-frame">
+                <table id="binary">
+                    <tr>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">63</td>
+                        <td colspan="3">63</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>1000</td>
+                        <td>0111</td>
+                        <td>0001</td>
+                        <td>1011</td>
+                        <td>1011</td>
+                        <td>0111</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">31</td>
+                        <td colspan="3">15</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+            <table class="buttons-table">
+                <tr>
+                    <td colspan="2" rowspan="3" class="radio-buttons">
+                        <input type="radio" id="hex" name="numeral-systems" value="Hex" />
+                        <label for="hex">Hex</label><br />
+                        <input type="radio" id="dec" name="numeral-systems" value="Dec" checked="checked" />
+                        <label for="dec">Dec</label><br />
+                        <input type="radio" id="oct" name="numeral-systems" value="Oct" />
+                        <label for="oct">Oct</label><br />
+                        <input type="radio" id="bin" name="numeral-systems" value="Bin" />
+                        <label for="bin">Bin</label>
+                    </td>
+                    <td></td>
+                    <td class="button">Mod</td>
+                    <td class="disabled-button letter">A</td>
+                    <td class="m-button">MC</td>
+                    <td class="m-button">MR</td>
+                    <td class="m-button">MS</td>
+                    <td class="m-button">M+</td>
+                    <td class="m-button">M-</td>
+                </tr>
+                <tr>
+                    <td class="button">(</td>
+                    <td class="button">)</td>
+                    <td class="disabled-button letter">B</td>
+                    <td class="button" id="arrow">&larr;</td>
+                    <td class="button">CE</td>
+                    <td class="button">C</td>
+                    <td class="button">&#177;</td>
+                    <td class="disabled-button">&radic;</td>
+                </tr>
+                <tr>
+                    <td class="button">RoL</td>
+                    <td class="button">RoR</td>
+                    <td class="disabled-button letter">C</td>
+                    <td class="digit-button">7</td>
+                    <td class="digit-button">8</td>
+                    <td class="digit-button">9</td>
+                    <td class="button">&#47;</td>
+                    <td class="disabled-button">&#37;</td>
+                </tr>
+                <tr>
+                    <td colspan="2" rowspan="3" class="radio-buttons">
+                        <input type="radio" id="qword" name="bits" value="Qword" checked="checked" />
+                        <label for="qword">Qword</label><br />
+                        <input type="radio" id="dword" name="bits" value="Dword" />
+                        <label for="dword">Dword</label><br />
+                        <input type="radio" id="word" name="bits" value="Word" />
+                        <label for="word">Word</label><br />
+                        <input type="radio" id="byte" name="bits" value="Byte" />
+                        <label for="byte">Byte</label>
+                    </td>
+                    <td class="button">Or</td>
+                    <td class="button">Xor</td>
+                    <td class="disabled-button letter">D</td>
+                    <td class="digit-button">4</td>
+                    <td class="digit-button">5</td>
+                    <td class="digit-button">6</td>
+                    <td class="button" id="asterisk">&#42;</td>
+                    <td class="disabled-button" id="odx">1/&#119909;</td>
+                    <!--&#119909; does not work in Opera and Chrome-->
+                </tr>
+                <tr>
+                    <td class="button">Lsh</td>
+                    <td class="button">Rsh</td>
+                    <td class="disabled-button letter">E</td>
+                    <td class="digit-button">1</td>
+                    <td class="digit-button">2</td>
+                    <td class="digit-button">3</td>
+                    <td class="button">&#45;</td>
+                    <td rowspan="2" class="button" id="equal">&#61;</td>
+                </tr>
+                <tr>
+                    <td class="button">Not</td>
+                    <td class="button">And</td>
+                    <td class="disabled-button letter">F</td>
+                    <td colspan="2" class="digit-button">0</td>
+                    <td class="disabled-button">&#44;</td>
+                    <td class="button" id="plus">&#43;</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

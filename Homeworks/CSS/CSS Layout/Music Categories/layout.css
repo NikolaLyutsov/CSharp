@@ -1,0 +1,13 @@
+﻿  #as, #ad {
+      width:40 px;
+      height:40 px ;
+    border:2 px solid black ;
+    float:right
+}
+ .clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}

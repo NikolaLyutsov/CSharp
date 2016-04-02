@@ -1,0 +1,72 @@
+﻿
+body, nav, section, a, video
+{
+    font-family: calibri;
+    color: #a1aeb5;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: 16px;
+    border: 0;
+}
+
+body {
+    background: #1e3741;
+    padding: 10px 10px 0 0;
+}
+
+nav
+{
+    margin: 0 0 15px 0;
+}
+
+nav a
+{
+    display: inline-block;
+    padding: 10px 20px;
+    border: 0;
+    margin: 0;
+    background: #4b5f67;
+}
+
+#selected, nav a:active
+{
+    background: #1e3741;
+    color: white;
+}
+
+#selectedNews, section a:active
+{
+    background: #00968c;
+    color: white;
+}
+
+nav a:hover, section a:hover
+{
+    text-decoration: underline;
+}
+
+section a 
+{
+    display: block;
+    padding: 10px;
+    border-top: 1px solid #CCCCCC;
+    width: 250px;
+}
+
+section
+{
+    float: left;
+    clear: both;
+}
+
+section a:first-of-type
+{
+    border-top: 0;
+}
+
+video
+{
+    height: 340px;
+    background-color: black;
+}

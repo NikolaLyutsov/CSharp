@@ -1,0 +1,24 @@
+﻿nav ul	{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav ul ul {
+	padding-left: 15px;
+	display: none;
+	opacity: 0.5;
+}
+
+nav ul li:hover > ul {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
