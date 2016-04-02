@@ -1,0 +1,239 @@
+﻿<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Notebook store</title>
+    <style>
+        .head {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .sidebar {
+            float: right;
+            padding-right: 3%;
+        }
+
+        .article {
+            width: 70%;
+        }
+
+        .sidebar {
+            margin-right: 3%;
+        }
+
+        .product {
+            width: 70%;
+        }
+
+            .product #name {
+                text-align: center;
+                font-size: 18px;
+            }
+
+        #list {
+            margin-left: 3%;
+            width: 100%;
+        }
+
+        #price {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #info {
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function outputMinPrice(vol) {
+            document.querySelector('#minprice').value = vol;
+        }
+        function outputMaxPrice(vol) {
+            document.querySelector('#maxprice').value = vol;
+        }
+        function outputMinRAM(vol) {
+            document.querySelector('#minram').value = vol;
+        }
+        function outputMaxRAM(vol) {
+            document.querySelector('#maxram').value = vol;
+        }
+    </script>
+</head>
+<body>
+        <fieldset>
+            <div class="head">
+                <a href="03.NotebookStore.html">All</a>
+                <a href="/Notebook store/03.NotebookStore–Apple.html">Apple</a>
+                <a href="/Notebook store/03.NotebookStore–Toshiba.html">Toshiba</a>
+                <a href="/Notebook store/03.NotebookStore–Lenovo.html">Lenovo</a>
+                <a href="/Notebook store/03.NotebookStore–Dell.html">Dell</a>
+                <a href="/Notebook store/03.NotebookStore–Asus.html">Asus</a>
+                <a href="/Notebook store/03.NotebookStore–Acer.html">Acer</a>
+                <a href="/Notebook store/03.NotebookStore–HP.html">HP</a>
+            </div>
+            <fieldset>
+                <div class="sidebar">
+                    <p>
+                        Min price: <output for=minprice id=minprice>1000</output>USD <br />
+                        <input id="sminprice" type="range" min="500" max="1500" step="50" oninput="outputMinPrice(value)" />
+                    </p>
+                    <p>
+                        Max price: <output for=maxprice id=maxprice>1000</output>USD <br />
+                        <input id="smaxprice" type="range" min="500" max="1500" step="50" oninput="outputMaxPrice(value)" />
+                    </p>
+                    <p>
+                        Min RAM: <output for=minram id=minram>12</output>GB <br />
+                        <input id="sminram" type="range" min="4" max="16" step="4" oninput="outputMinRAM(value)" />
+                    </p>
+                    <p>
+                        Max RAM: <output for=maxram id=maxram>12</output>GB <br />
+                        <input id="smaxram" type="range" min="4" max="16" step="4" oninput="outputMaxRAM(value)" />
+                    </p>
+                </div>
+                <fieldset class="article">
+                    <table id="list">
+                        <tr>
+                            <td>
+                                <fieldset class="product">
+                                    <legend id="name">Apple MacBook Air</legend>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="241362-apple-macbook-air-13-inch.jpg" width="150" alt="Alternate Text" />
+                                            </td>
+                                            <td id="info">
+                                                64GB SSD <br />
+                                                2GB DDR <br />
+                                                Intel Core i5
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="price">
+                                                1300 USD
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <fieldset class="product">
+                                    <legend id="name">Toshiba Satellite</legend>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="241362-apple-macbook-air-13-inch.jpg" width="150" alt="Alternate Text" />
+                                            </td>
+                                            <td id="info">
+                                                64GB SSD <br />
+                                                2GB DDR <br />
+                                                Intel Core i5
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="price">
+                                                800 USD
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <fieldset class="product">
+                                    <legend id="name">Lenovo Ideapad</legend>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="241362-apple-macbook-air-13-inch.jpg" width="150" alt="Alternate Text" />
+                                            </td>
+                                            <td id="info">
+                                                64GB SSD <br />
+                                                2GB DDR <br />
+                                                Intel Core i5
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="price">
+                                                1000 USD
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <fieldset class="product">
+                                    <legend id="name">Dell Inspiron</legend>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="241362-apple-macbook-air-13-inch.jpg" width="150" alt="Alternate Text" />
+                                            </td>
+                                            <td id="info">
+                                                64GB SSD <br />
+                                                2GB DDR <br />
+                                                Intel Core i5
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="price">
+                                                1000 USD
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <fieldset class="product">
+                                    <legend id="name">Asus ZenBook</legend>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="241362-apple-macbook-air-13-inch.jpg" width="150" alt="Alternate Text" />
+                                            </td>
+                                            <td id="info">
+                                                64GB SSD <br />
+                                                2GB DDR <br />
+                                                Intel Core i5
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="price">
+                                                1200 USD
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <fieldset class="product">
+                                    <legend id="name">HP Pavilion</legend>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="241362-apple-macbook-air-13-inch.jpg" width="150" alt="Alternate Text" />
+                                            </td>
+                                            <td id="info">
+                                                64GB SSD <br />
+                                                2GB DDR <br />
+                                                Intel Core i5
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="price">
+                                                900 USD
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </fieldset>
+        </fieldset>
+</body>
+</html>
