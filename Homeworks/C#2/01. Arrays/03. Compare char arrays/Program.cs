@@ -1,48 +1,38 @@
 ﻿//Write a program that compares two char arrays lexicographically (letter by letter).
 
 using System;
-
-class Program
+public class CompareCharArrays
 {
-        static void Main()
+    private static void Main()
+    {
+        string charArr1 = Console.ReadLine();
+        string charArr2 = Console.ReadLine();
+
+        for (int i = 0; i < Math.Min(charArr1.Length, charArr2.Length); i++)
         {
-        string first = Console.ReadLine();
-        char[] firstArray = first.ToCharArray();
-        string second = Console.ReadLine();
-        char[] secondArray = second.ToCharArray();
-        int count = 0;
-            if (firstArray.Length < secondArray.Length)
+            if (charArr1[i] < charArr2[i])
             {
                 Console.WriteLine("<");
+                return;
             }
-            else if (firstArray.Length > secondArray.Length)
+            else if (charArr1[i] > charArr2[i])
             {
                 Console.WriteLine(">");
+                return;
             }
-            else
-            {
-                for (int i = 0; i < firstArray.Length; i++)
-                {
-                if (firstArray[i] == secondArray[i])
-                {
-                    count++;
-                }
-                else if (firstArray[i] > secondArray[i])
-                {
-                    Console.WriteLine(">");
-                    break;
-                }
-                else if (firstArray[i] < secondArray[i])
-                {
-                    Console.WriteLine("<");
-                    break;
-                }
-                if (firstArray.Length == count)
-                {
-                    Console.WriteLine("=");
-                }
-            }
-            }
-            
+        }
+
+        if (charArr1.Length == charArr2.Length)
+        {
+            Console.WriteLine("=");
+        }
+        else if (charArr1.Length < charArr2.Length)
+        {
+            Console.WriteLine("<");
+        }
+        else if (charArr1.Length > charArr2.Length)
+        {
+            Console.WriteLine(">");
+        }
     }
 }
