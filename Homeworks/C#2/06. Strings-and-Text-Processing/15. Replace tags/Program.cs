@@ -1,125 +1,58 @@
 ﻿//Write a program that replaces in a HTML document given as string all the tags
 //<a href="…">…</a> with corresponding tags[URL =…](…/URL).
 
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
-class ReplaceTags6
+namespace ReplaceTags
 {
-    static void Main()
+    class Program
     {
-        var stream = Console.OpenStandardInput(1048576);
-
-        var BREAK = new[] { 13, 10, 3, 4, 12, 23, 25 };
-
-        var isTag = false;
-
-        var inputTag = new StringBuilder();
-
-        var curBuffer = new byte[1024];
-
-        var read = true;
-
-        while (read)
+        static void Main()
         {
-            var readChars = stream.Read(curBuffer, 0, 1024);
+            var input = Console.ReadLine().Trim();
+            var output = new StringBuilder();
 
-            for (int i = 0; i < readChars; i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                var curChar = curBuffer[i];
-
-                if (BREAK.Contains(curChar))
+                if (input[i] == '<' && input[i + 1] == 'a')
                 {
-                    read = false;
-                    break;
-                }
-                
-                if (curChar == '<' && isTag == false)
-                {
-                    isTag = true;
-                }
-
-                if (isTag)
-                {
-                    inputTag.Append((char)curChar);
-                }
-                
-                if (curChar == '>' && isTag == true)
-                {
-                    if (isOpenAnchor(inputTag.ToString()))
-                    {
-                        isTag = true;
-                    }
-                    else
-                    {
-                        isTag = false;
-
-                        if (ContainsCloseAnchor(inputTag.ToString()))
-                        {
-                            Console.Write(ReplaceTags(inputTag.ToString()));
-                        }
-                        else
-                        {
-                            Console.Write(inputTag);
-                        }
-
-                        inputTag.Clear();
-                    }
-
+                    var anchor = ExtractAnchorOuterHtml(input, i);
+                    var url = ExtractUrl(anchor);
+                    var innerText = ExtractInnerText(anchor);
+                    output.AppendFormat("[{0}]({1})", innerText, url);
+                    i += anchor.Length - 1;
                     continue;
                 }
 
-                if (!isTag)
-                {
-                    Console.Write((char)curChar);
-                }
+                output.Append(input[i]);
             }
 
-            Console.WriteLine();
+            Console.WriteLine(output);
         }
 
-        stream.Close();
-    }
-
-    static bool ContainsCloseAnchor(string Tag)
-    {
-        return Tag.Contains("</a>");
-    }
-    
-    static bool isOpenAnchor(string Tag)
-    {
-        var openAnchor = "<a href=";
-
-        for (int curLetter = 0; curLetter < openAnchor.Length; curLetter++)
+        static string ExtractInnerText(string anchor)
         {
-            if (Tag[curLetter] != openAnchor[curLetter])
-            {
-                return false;
-            }
+            int indexOfFirstClosingBracket = anchor.IndexOf(">", 1);
+            int indexOfSecondOpeningBracket = anchor.IndexOf("<", indexOfFirstClosingBracket);
+            var innerText = anchor.Substring(indexOfFirstClosingBracket + 1, indexOfSecondOpeningBracket - indexOfFirstClosingBracket - 1);
+            return innerText;
         }
 
-        return !(ContainsCloseAnchor(Tag));
-    }
-    
-    static string ReplaceTags(string toParse)
-    {
-        var toRemove = new Dictionary<string, string>
-            {
-                { "<a href=\"", ""  },
-                { "\">"       , "~" },
-                { "</a>"      , ""  }
-            };
-
-        foreach (var tag in toRemove)
+        static string ExtractUrl(string anchor)
         {
-            toParse = toParse.Replace(tag.Key, tag.Value);
+            int firstIndexOfDoubleQuote = anchor.IndexOf("\"");
+            int lastIndexOfDoubleQuote = anchor.LastIndexOf("\"");
+            var url = anchor.Substring(firstIndexOfDoubleQuote + 1, lastIndexOfDoubleQuote - firstIndexOfDoubleQuote - 1);
+            return url;
         }
 
-        var strings = toParse.Split('~').ToArray();
-
-        var format = "[{0}]({1})";
-        return string.Format(format, strings[1], strings[0]);
+        static string ExtractAnchorOuterHtml(string text, int i)
+        {
+            int indexOfClosingAnchorTag = text.IndexOf("</a>", i);
+            var anchor = text.Substring(i, indexOfClosingAnchorTag + 4 - i);
+            return anchor;
+        }
     }
 }

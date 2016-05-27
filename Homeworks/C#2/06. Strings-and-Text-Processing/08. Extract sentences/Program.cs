@@ -2,38 +2,70 @@
 //given word
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-    class Program
+public class ExtractSentences
+{
+    public static void Main(string[] args)
     {
-        static void Main()
+        var word = Console.ReadLine();
+        var text = Console.ReadLine();
+        Console.WriteLine(ExtratSentencesFromText(text, word));
+    }
+
+    private static string ExtratSentencesFromText(string text, string wordToFind)
+    {
+        var extractedText = new StringBuilder();
+
+        var allSentense = text.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(x => x.Trim())
+            .ToArray();
+        for (int i = 0; i < allSentense.Length; i++)
         {
-        string word = Console.ReadLine().ToLower();
-        string text = Console.ReadLine();
-        string[] sentences = text.Split('.').ToArray();
-
-        char[] separators = ExtractSeparators(text);
-        StringBuilder filterSentences = new StringBuilder();
-
-        for (int i = 0; i < sentences.Length; i++)
-        {
-            var words = sentences[i].ToLower().Split(separators).ToArray();
-            bool haveMatch = words.Any(x => x == word);
-
-            if (haveMatch)
+            if (FindWordInSentance(allSentense[i], wordToFind))
             {
-                filterSentences.Append(sentences[i] + ".");
+                extractedText.Append(allSentense[i]);
+                extractedText.Append('.');
+
+                if (i < allSentense.Length)
+                {
+                    extractedText.Append(" ");
+                }
             }
         }
-        Console.WriteLine(string.Join(" ", filterSentences));
-        }
-    static char[] ExtractSeparators(string text)
+
+        return extractedText.ToString().Trim();
+    }
+
+    private static bool FindWordInSentance(string sentance, string word)
     {
-        char[] separators = text.Where(x => !char.IsLetter(x) && x != '.')
-            .Distinct().ToArray();
-        return separators;
+        bool isFind = false;
+        var nextIndexOfWord = sentance.IndexOf(word);
+
+        var lastIndex = sentance.Length - word.Length;
+
+        while (nextIndexOfWord > -1)
+        {
+            if (nextIndexOfWord != 0 &&
+              ((char.IsLetter(sentance[nextIndexOfWord - 1])) ||
+               (sentance[nextIndexOfWord - 1] == '-')))
+            {
+                nextIndexOfWord = sentance.IndexOf(word, nextIndexOfWord + 1);
+            }
+            else if (nextIndexOfWord < lastIndex &&
+                ((char.IsLetter(sentance[nextIndexOfWord + word.Length]) ||
+                (sentance[nextIndexOfWord + word.Length] == '-'))))
+            {
+                nextIndexOfWord = sentance.IndexOf(word, nextIndexOfWord + 1);
+            }
+            else
+            {
+                isFind = true;
+                break;
+            }
+        }
+
+        return isFind;
     }
-    }
+}
