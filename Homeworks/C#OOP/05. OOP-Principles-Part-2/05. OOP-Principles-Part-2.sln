@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 2. Bank accounts", "Problem 2. Bank accounts\Problem 2. Bank accounts.csproj", "{AEA9A1FF-F1D0-4896-87A2-4721BEBAF2E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 3. Range Exceptions", "Problem 3. Range Exceptions\Problem 3. Range Exceptions.csproj", "{6A2B6110-8E3A-4869-9F94-DF5A7759F5D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 1. Shapes", "Problem 1. Shapes\Problem 1. Shapes.csproj", "{A8FC6C51-AC08-4F81-8AE5-137A80E3B14B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEA9A1FF-F1D0-4896-87A2-4721BEBAF2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA9A1FF-F1D0-4896-87A2-4721BEBAF2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEA9A1FF-F1D0-4896-87A2-4721BEBAF2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEA9A1FF-F1D0-4896-87A2-4721BEBAF2E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A2B6110-8E3A-4869-9F94-DF5A7759F5D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A2B6110-8E3A-4869-9F94-DF5A7759F5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A2B6110-8E3A-4869-9F94-DF5A7759F5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A2B6110-8E3A-4869-9F94-DF5A7759F5D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8FC6C51-AC08-4F81-8AE5-137A80E3B14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8FC6C51-AC08-4F81-8AE5-137A80E3B14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8FC6C51-AC08-4F81-8AE5-137A80E3B14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8FC6C51-AC08-4F81-8AE5-137A80E3B14B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
