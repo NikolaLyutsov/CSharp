@@ -1,4 +1,0 @@
-function solve(args){
-
-}
-solve();
