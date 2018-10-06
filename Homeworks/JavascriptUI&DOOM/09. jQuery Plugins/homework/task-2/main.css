@@ -1,0 +1,18 @@
+#root {
+    border-width: 2px;
+    border-color: dimgray;
+    border-style: solid;
+    width: 40px;
+    height: 40px;
+    background: dimgray;
+    border-radius: 4px;
+}
+
+.color-picker-panel {
+    background: dimgray;
+    border-radius: 4px;
+}
+
+.input-the-color {
+    border: 0px;
+}
